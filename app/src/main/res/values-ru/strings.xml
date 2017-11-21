@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content.toolbar.title.main">Главная</string>
+    <string name="content.toolbar.basket">Корзина</string>
+    <string name="content.search.hint">Что вы ищете?</string>
+</resources>
