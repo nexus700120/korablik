@@ -6,4 +6,5 @@
 
     <color name="colorToolbarTitle">#de000000</color>
     <color name="colorSearchItemHint">#8a000000</color>
+    <color name="colorActionButton">#0088d2</color>
 </resources>
