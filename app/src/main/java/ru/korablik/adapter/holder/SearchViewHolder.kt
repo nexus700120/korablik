@@ -6,11 +6,13 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.bumptech.glide.Glide
 import ru.korablik.R
 import org.jetbrains.anko.AnkoComponent
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.editText
 import org.jetbrains.anko.*
+import ru.korablik.color
 import ru.korablik.resIdForAttr
 
 /**
@@ -34,8 +36,7 @@ class SearchViewHolderUI : AnkoComponent<ViewGroup> {
             backgroundResource = R.drawable.search_item_background
 
             imageView {
-                imageResource = R.drawable.ic_search
-
+                Glide.with(this).load(R.drawable.ic_search).into(this)
             }.lparams(ViewGroup.MarginLayoutParams(dip(24), dip(24)).apply {
                 topMargin = dip(12)
                 bottomMargin = dip(12)
@@ -51,14 +52,15 @@ class SearchViewHolderUI : AnkoComponent<ViewGroup> {
                 textSize = 16F
                 singleLine = true
                 maxLines = 1
-                setHintTextColor(ctx.getColor(R.color.colorSearchItemHint))
-            }.lparams(LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1F).apply {
+                setHintTextColor(ctx.color(R.color.colorSearchItemHint))
+            }.lparams {
+                width = 0
+                weight = 1F
                 gravity = Gravity.CENTER_VERTICAL
-            })
+            }
 
             imageView {
-                imageResource = R.drawable.ic_scan
-
+                Glide.with(this).load(R.drawable.ic_scan).into(this)
             }.lparams(ViewGroup.MarginLayoutParams(dip(24), dip(24)).apply {
                 topMargin = dip(12)
                 bottomMargin = dip(12)
@@ -75,5 +77,4 @@ class SearchViewHolderUI : AnkoComponent<ViewGroup> {
 
         }
     }
-
 }

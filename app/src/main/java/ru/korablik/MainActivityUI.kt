@@ -24,8 +24,10 @@ class MainActivityUI : AnkoComponent<MainActivity> {
     override fun createView(ui: AnkoContext<MainActivity>): View = with(ui) {
         verticalLayout {
             toolbar = toolbar {
+                isFocusable = true
+                isFocusableInTouchMode = true
                 titleResource = R.string.content_toolbar_title_main
-                setTitleTextColor(ctx.getColor(R.color.colorToolbarTitle))
+                setTitleTextColor(ctx.color(R.color.colorToolbarTitle))
                 backgroundColor = Color.WHITE
                 navigationIconResource = R.drawable.ic_menu_burger
                 setNavigationOnClickListener {

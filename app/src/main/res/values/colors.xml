@@ -7,4 +7,13 @@
     <color name="colorToolbarTitle">#de000000</color>
     <color name="colorSearchItemHint">#8a000000</color>
     <color name="colorActionButton">#0088d2</color>
+    <color name="colorDescriptionGender">#de222222</color>
+    <color name="colorBoyButton">#3aa2f0</color>
+    <color name="colorGirlButton">#f03ba2</color>
+    <color name="colorGiftDescription">#de121212</color>
+    <color name="colorChoiceButton">#0088d2</color>
+    <color name="colorCardTitle">#b3000000</color>
+    <color name="colorContactSubtitle">#61000000</color>
+    <color name="colorUnselectedIndicator">#19000000</color>
+    <color name="colorSelectedIndicator">#fb7c02</color>
 </resources>
