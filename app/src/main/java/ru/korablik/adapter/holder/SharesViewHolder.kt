@@ -17,6 +17,8 @@ import ru.korablik.anko.pagerIndicator
 import ru.korablik.color
 import ru.korablik.domain.SharesPayload
 import ru.korablik.ext.scrollSpeed
+import ru.korablik.view.AutoScrollViewPager
+import ru.korablik.view.InfinitePagerAdapter
 
 /**
  * Created by vkirillov on 22.11.2017.
@@ -27,15 +29,17 @@ class SharesViewHolder(private val ui: SharesViewHolderUI) : RecyclerView.ViewHo
         (ui.viewPager.adapter as SharesAdapter).apply {
             icons = payload.imageResList
             notifyDataSetChanged()
+
+            ui.viewPager.setCurrentItem(ui.viewPager.getInfiniteMiddlePosition(), true)
             ui.pageIndicator.count = icons.size
-            ui.pageIndicator.selection = ui.viewPager.currentItem
+            ui.pageIndicator.selection = ui.viewPager.getRealPosition(ui.viewPager.currentItem)
         }
     }
 }
 
 class SharesViewHolderUI : AnkoComponent<ViewGroup> {
     lateinit var root: LinearLayout
-    lateinit var viewPager: ViewPager
+    lateinit var viewPager: AutoScrollViewPager
     lateinit var pageIndicator: PageIndicatorView
 
     override fun createView(ui: AnkoContext<ViewGroup>): View = with(ui) {
@@ -46,7 +50,7 @@ class SharesViewHolderUI : AnkoComponent<ViewGroup> {
             }
             viewPager = autoScrollViewPager {
                 adapter = SharesAdapter()
-                scrollSpeed(1300)
+                scrollSpeed(1000)
             }.lparams {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
                 height = dip(136)
@@ -57,27 +61,39 @@ class SharesViewHolderUI : AnkoComponent<ViewGroup> {
                 radius = 3
                 padding = 6
                 setAnimationType(AnimationType.SLIDE)
-                setViewPager(viewPager)
             }.lparams {
                 topMargin = dip(8)
                 gravity = Gravity.CENTER_HORIZONTAL
             }
+
+            viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+                override fun onPageScrollStateChanged(state: Int) {}
+
+                override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                    pageIndicator.onPageScrolled(viewPager.getRealPosition(position), positionOffset, positionOffsetPixels)
+                }
+
+                override fun onPageSelected(position: Int) {
+                    pageIndicator.onPageSelected(viewPager.getRealPosition(position))
+                }
+            })
         }
         return@with root
     }
 }
 
-class SharesAdapter : PagerAdapter() {
+class SharesAdapter : PagerAdapter(), InfinitePagerAdapter {
 
     var icons: List<Int> = listOf()
 
     override fun isViewFromObject(view: View?, `object`: Any?): Boolean = view == `object`
 
-    override fun getCount(): Int = icons.size
+    override fun getCount(): Int = if (icons.isEmpty()) 0 else 10000
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        val imageRes = icons[position.rem(getRealCount())]
         val ankoContext = AnkoContext.create(container.context, container)
-        val view = ShareItemUI(icons[position]).createView(ankoContext)
+        val view = ShareItemUI(imageRes).createView(ankoContext)
         container.addView(view)
         return view
     }
@@ -85,6 +101,10 @@ class SharesAdapter : PagerAdapter() {
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         container.removeView(`object` as View)
     }
+
+    override fun getItemPosition(`object`: Any?): Int = PagerAdapter.POSITION_NONE
+
+    override fun getRealCount(): Int = icons.size
 
     class ShareItemUI(private val imageRes: Int) : AnkoComponent<ViewGroup> {
 
