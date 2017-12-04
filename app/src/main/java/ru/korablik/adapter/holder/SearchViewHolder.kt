@@ -13,14 +13,11 @@ import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.editText
 import org.jetbrains.anko.*
 import ru.korablik.color
-import ru.korablik.resIdForAttr
 
 /**
  * Created by vkirillov on 20.11.2017.
  */
-class SearchViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-}
+class SearchViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
 class SearchViewHolderUI : AnkoComponent<ViewGroup> {
 
@@ -74,7 +71,6 @@ class SearchViewHolderUI : AnkoComponent<ViewGroup> {
                 translationZ = dip(4).toFloat()
                 elevation = dip(2).toFloat()
             }
-
         }
     }
 }

@@ -30,25 +30,19 @@ class MainActivityUI : AnkoComponent<MainActivity> {
                 setTitleTextColor(ctx.color(R.color.colorToolbarTitle))
                 backgroundColor = Color.WHITE
                 navigationIconResource = R.drawable.ic_menu_burger
-                setNavigationOnClickListener {
-                    toast("STUB")
-                }
+                setNavigationOnClickListener {}
                 inflateMenu(R.menu.basket_menu)
-                setOnMenuItemClickListener {
-                    toast("STUB"); true
-                }
+                setOnMenuItemClickListener { true }
                 doFromSdk(21) {
                     translationZ = dip(4).toFloat()
                     elevation = dip(2).toFloat()
                 }
 
             }
-            recycler = recyclerView {
-//                backgroundColor = Color.CYAN
-            }.lparams(width = ViewGroup.LayoutParams.MATCH_PARENT,
-                    height = ViewGroup.LayoutParams.MATCH_PARENT)
-
-
+            recycler = recyclerView().lparams {
+                width = ViewGroup.LayoutParams.MATCH_PARENT
+                height = ViewGroup.LayoutParams.MATCH_PARENT
+            }
         }
     }
 

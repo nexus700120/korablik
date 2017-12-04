@@ -72,9 +72,7 @@ class CardViewHolderUI : AnkoComponent<ViewGroup> {
                 rightMargin = dip(16)
                 gravity = Gravity.CENTER_VERTICAL
             }
-
         }
         return@with root
     }
-
 }

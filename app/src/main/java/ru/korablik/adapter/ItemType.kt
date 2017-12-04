@@ -14,5 +14,7 @@ class ItemType<T>(val type: Int, val payload: T? = null) {
         val giftType = 6
         val cardType = 7
         val contactType = 8
+        val set = 9
+        val space = 10
     }
 }

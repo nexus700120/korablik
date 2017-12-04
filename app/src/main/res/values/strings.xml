@@ -1,3 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Korablik</string>
+    <string name="app">Кораблик</string>
+    <string name="content.toolbar.title.main">Главная</string>
+    <string name="content.toolbar.basket">Корзина</string>
+    <string name="content.search.hint">Что вы ищете?</string>
+    <string name="content.gender.desc">Получайте персональные рекомендации по мере роста и развития Ваших малышей!</string>
+    <string name="content.common.boy">Мальчик</string>
+    <string name="content.common.girl">Девочка</string>
+    <string name="content.gift.desc">Поможем подобрать подарок ребёнку по вкусу!</string>
+    <string name="content.gift.action">Подобрать</string>
+    <string name="content.common.buy.basket">В корзину</string>
+    <string name="content.common.promotions">Акции</string>
+    <string name="content.common.recommended">Рекомендуем вам</string>
+    <string name="content.common.all">Все</string>
+    <string name="content.common.sale">Распродажа</string>
+    <string name="content.common.new">Новинки</string>
+    <string name="content.common.top.sales">Топ продаж</string>
+    <string name="content.common.gift.cards">Подарочные карты</string>
+    <string name="content.electronic.gift.certificate">Электронный подарочный сертификат</string>
+    <string name="content.gift.flexible">Подарочная карта гибкого номинала</string>
+    <string name="content.gift.corporate">Корпоративные подарочные карты</string>
+    <string name="content.common.set.title">Готовые комплекты</string>
+    <string name="content.common.recently.watched">Вы недавно смотрели</string>
+    <string name="content.address.title">Адреса магазинов</string>
+    <string name="content.address.desc">Найдите магазины, которые находятся с рядом с вами!</string>
+    <string name="content.contact.title">Связь с нами</string>
+    <string name="content.contact.desc">Присоединяйтесь к нам в соц. сетях и следите за новостями!</string>
 </resources>

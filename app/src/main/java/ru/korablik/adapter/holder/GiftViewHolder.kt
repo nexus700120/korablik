@@ -24,6 +24,7 @@ class GiftViewHolderUI : AnkoComponent<ViewGroup> {
         root = verticalLayout {
             lparams {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
+                topMargin = dip(16)
             }
 
             backgroundResource = R.drawable.white_bordered_background
@@ -67,5 +68,4 @@ class GiftViewHolderUI : AnkoComponent<ViewGroup> {
         }
         return@with root
     }
-
 }

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="desc" type="id"/>
+    <item name="product_image" type="id"/>
+    <item name="product_description" type="id"/>
+    <item name="product_price" type="id"/>
+    <item name="buy" type="id"/>
+    <item name="poster1" type="id"/>
+    <item name="poster2" type="id"/>
+    <item name="poster3" type="id"/>
 </resources>

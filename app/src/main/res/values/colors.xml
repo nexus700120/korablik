@@ -16,4 +16,12 @@
     <color name="colorContactSubtitle">#61000000</color>
     <color name="colorUnselectedIndicator">#19000000</color>
     <color name="colorSelectedIndicator">#fb7c02</color>
+    <color name="colorStatusRed">#ff0000</color>
+    <color name="colorsStatusGold">#f1be00</color>
+    <color name="colorsStatusGreen">#77bd49</color>
+    <color name="colorStatusOrange">#fb7c02</color>
+    <color name="colorProductBorder">#cacfd2</color>
+    <color name="colorBuyButton">#fb7c02</color>
+    <color name="colorAdditionalDescription">#8a000000</color>
+    <color name="colorWindowBackground">#f2f3f3</color>
 </resources>

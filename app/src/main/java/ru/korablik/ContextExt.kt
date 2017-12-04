@@ -7,10 +7,5 @@ import android.util.TypedValue
 /**
  * Created by vkirillov on 20.11.2017.
  */
-inline fun Context.resIdForAttr(attr: Int): Int {
-    val typedValue = TypedValue()
-    theme.resolveAttribute(attr, typedValue, true)
-    return typedValue.resourceId
-}
 
 fun Context.color(colorResId: Int): Int = ContextCompat.getColor(this, colorResId)

@@ -85,7 +85,7 @@ class GenderViewHolderUI : AnkoComponent<ViewGroup> {
                 }
             }.lparams {
                 width = RelativeLayout.LayoutParams.MATCH_PARENT
-                bottomMargin = dip(16)
+                bottomPadding = dip(16)
                 below(desc)
             }
         }
